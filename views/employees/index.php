@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
 			</p>
 			<div class="clearfix"></div>
 			<br>
-			<?= GridView::widget([
+            <?= GridView::widget([
                 'dataProvider' => $dataProvider,
                 'columns' => [
                     ['class' => 'yii\grid\SerialColumn'],
@@ -31,20 +31,20 @@ $this->params['breadcrumbs'][] = $this->title;
                     'birth_year',
                     [
                         'attribute' => 'gender',
-	                    'contentOptions' => ['class' => 'should-hide'],
-					    'headerOptions' => ['class' => 'should-hide'],
+                        'contentOptions' => ['class' => 'should-hide'],
+                        'headerOptions' => ['class' => 'should-hide'],
                         'value' => function ($model) {
                             return Employee::$genders[$model->gender];
                         }
                     ],
-	                [
+                    [
                         'attribute' => 'groupsForView',
                         'contentOptions' => ['class' => 'should-hide'],
                         'headerOptions' => ['class' => 'should-hide'],
-					],
+                    ],
                     [
-                    		'class' => 'yii\grid\ActionColumn',
-                    		'template' => '{update}'
+                        'class' => 'yii\grid\ActionColumn',
+                        'template' => '{update}'
                     ],
                 ],
             ]); ?>
